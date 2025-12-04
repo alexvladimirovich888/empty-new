@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/bNbc6YXs/ADS-2025-12-04T182605-024.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>$EMPTY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Oswald:wght@300;400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #e5e5e5;
+        overflow-x: hidden;
+      }
+      /* Custom Animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(2deg); }
+      }
+      @keyframes wobble {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(-5deg); }
+        50% { transform: rotate(5deg); }
+        75% { transform: rotate(-5deg); }
+        100% { transform: rotate(0deg); }
+      }
+      @keyframes fall-return {
+        0% { transform: translateY(0) rotate(0); opacity: 1; }
+        40% { transform: translateY(150px) rotate(180deg); opacity: 0; }
+        41% { transform: translateY(-150px) rotate(0); opacity: 0; }
+        100% { transform: translateY(0) rotate(0); opacity: 1; }
+      }
+      @keyframes noise {
+        0%, 100% { background-position: 0 0; }
+        10% { background-position: -5% -10%; }
+        20% { background-position: -15% 5%; }
+        30% { background-position: 7% -25%; }
+        40% { background-position: 20% 25%; }
+        50% { background-position: -25% 10%; }
+        60% { background-position: 15% 5%; }
+        70% { background-position: 0% 15%; }
+        80% { background-position: 25% 35%; }
+        90% { background-position: -10% 10%; }
+      }
+      
+      .font-serif-distressed { font-family: 'Cinzel', serif; }
+      .font-sans-aggressive { font-family: 'Oswald', sans-serif; }
+      .font-typewriter { font-family: 'Special Elite', monospace; }
+
+      .animate-float { animation: float 6s ease-in-out infinite; }
+      .animate-wobble-slow { animation: wobble 4s ease-in-out infinite; }
+      .animate-fall-return { animation: fall-return 8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite; }
+      
+      .noise-bg {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        right: -50%;
+        bottom: -50%;
+        width: 200%;
+        height: 200vh;
+        background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+        background-repeat: repeat;
+        animation: noise .5s steps(2) infinite;
+        opacity: .05;
+        pointer-events: none;
+        z-index: 50;
+      }
+      
+      .toxic-highlight {
+        color: #DFFF00;
+        text-shadow: 0 0 10px rgba(223, 255, 0, 0.5);
+      }
+      
+      .bg-toxic {
+        background-color: #DFFF00;
+        box-shadow: 0 0 20px rgba(223, 255, 0, 0.4);
+      }
+
+      /* Custom scrollbar hide for single screen feel */
+      ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
