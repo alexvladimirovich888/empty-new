@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Twitter, Send, ExternalLink } from 'lucide-react';
+import { Twitter, Send } from 'lucide-react';
 
 // --- Components ---
 
@@ -164,9 +164,6 @@ const ContentLayer: React.FC = () => {
 const Noise: React.FC = () => <div className="noise-bg"></div>;
 
 export default function App() {
-  // Mobile check to adjust layout if needed, though CSS media queries handle most.
-  // Using a simplified layout that relies on Tailwind's responsiveness.
-  
   return (
     <div className="relative min-h-screen w-full bg-[#0a0a0a] text-white selection:bg-[#DFFF00] selection:text-black">
       <Noise />
@@ -176,29 +173,3 @@ export default function App() {
     </div>
   );
 }
-
-// Add global styles for clip-path if needed inline for the button
-const styleSheet = document.createElement("style");
-styleSheet.innerText = `
-  .clip-path-ticket {
-    clip-path: polygon(
-      0% 0%, 
-      100% 0%, 
-      100% 100%, 
-      90% 100%, 
-      85% 90%, 
-      15% 90%, 
-      10% 100%, 
-      0% 100%
-    );
-  }
-  .mask-image-radial {
-    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-  }
-  .mask-image-diagonal {
-    -webkit-mask-image: linear-gradient(45deg, black 40%, transparent 90%);
-    mask-image: linear-gradient(45deg, black 40%, transparent 90%);
-  }
-`;
-document.head.appendChild(styleSheet);

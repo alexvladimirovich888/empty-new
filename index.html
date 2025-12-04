@@ -80,6 +80,28 @@
         box-shadow: 0 0 20px rgba(223, 255, 0, 0.4);
       }
 
+      /* Shape Utilities */
+      .clip-path-ticket {
+        clip-path: polygon(
+          0% 0%, 
+          100% 0%, 
+          100% 100%, 
+          90% 100%, 
+          85% 90%, 
+          15% 90%, 
+          10% 100%, 
+          0% 100%
+        );
+      }
+      .mask-image-radial {
+        -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+        mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+      }
+      .mask-image-diagonal {
+        -webkit-mask-image: linear-gradient(45deg, black 40%, transparent 90%);
+        mask-image: linear-gradient(45deg, black 40%, transparent 90%);
+      }
+
       /* Custom scrollbar hide for single screen feel */
       ::-webkit-scrollbar { width: 0px; background: transparent; }
     </style>
@@ -96,5 +118,6 @@
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
